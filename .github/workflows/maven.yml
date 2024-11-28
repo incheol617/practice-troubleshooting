@@ -40,8 +40,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: ${{ secrets.BASEACR_LOGIN_SERVER }}
-        username: ${{ secrets.BASEACR_USERNAME }}
-        password: ${{ secrets.BASEACR_PASSWORD }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build & Tag image
       run: |
         docker build -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest .
@@ -50,8 +50,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: ${{ secrets.BASEACR_LOGIN_SERVER }}
-        username: ${{ secrets.BASEACR_USERNAME }}
-        password: ${{ secrets.BASEACR_PASSWORD }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
         docker push ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
     - name: Update Kubernetes resources
