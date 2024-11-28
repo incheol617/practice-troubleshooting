@@ -15,7 +15,7 @@ public class UserController {
 
   @GetMapping
   public ResponseEntity<String> getEmployeeNumber() {
-    String employeeNumber = "82265825";
+    String employeeNumber = "82225592";
     log.info("Respond with employee number {}", employeeNumber);
 
     return new ResponseEntity<>(employeeNumber, HttpStatus.OK);

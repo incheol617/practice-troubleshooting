@@ -10,5 +10,5 @@ namePrefix: prod-
 images:
 - name: ceappacr.azurecr.io/
   newTag: "202411191543"
-- name: ceappacr.azurecr.io/app-82265825
+- name: ceappacr.azurecr.io/app-82225592
   newTag: "202411191618"

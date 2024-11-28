@@ -1,20 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: app-82265825
+  name: app-82225592
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - name: app-82265825
+        - name: app-82225592
           command: ["java","-jar","/app.jar"]
           args: ["--spring.config.location=file:/config/application.yml"]
           volumeMounts:
-          - mountPath: /mnv/app-82265825
-            name: app-82265825-volume
+          - mountPath: /mnv/app-82225592
+            name: app-82225592-volume
             readOnly: false
-            subPath: app-82265825
+            subPath: app-82225592
           - mountPath: /config
             name: application-properties
             readOnly: true
@@ -28,12 +28,12 @@ spec:
           #   readOnly: true
                           
       volumes:
-      - name: app-82265825-volume
+      - name: app-82225592-volume
         persistentVolumeClaim:
           claimName: ce-aa-pvc
       - name: application-properties
         configMap:
-          name: app-82265825-configmap
+          name: app-82225592-configmap
           items:
             - key: application.yml
               path: application.yml

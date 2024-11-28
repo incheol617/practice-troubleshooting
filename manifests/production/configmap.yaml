@@ -9,7 +9,7 @@ data:
     \     hibernate:\r\n        dialect: org.hibernate.dialect.PostgreSQLDialect\r\n
     \       format_sql: true\r\n  sql:\r\n    init:\r\n      mode: embedded\r\n\r\n
     \ management:\r\n    endpoints:\r\n      web:\r\n        exposure:\r\n          include:
-    \"*\"\r\n\r\n  pvc:\r\n    path: /mnt/82265825\r\n\r\n\r\nspring:\r\n  config:\r\n
+    \"*\"\r\n\r\n  pvc:\r\n    path: /mnt/82225592\r\n\r\n\r\nspring:\r\n  config:\r\n
     \   activate:\r\n      on-profile: prod\r\n  datasource:\r\n    driver-class-name:
     org.postgresql.Driver\r\n    url: jdbc:postgresql://localhost:5432/postgres\r\n
     \   username: sa\r\n    password: sa\r\n  jpa:\r\n    show-sql: true\r\n    hibernate:\r\n
@@ -21,4 +21,4 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: app-82265825-configmap
+  name: app-82225592-configmap

@@ -33,4 +33,4 @@ spring:
           include: "*"
 
   pvc:
-    path: /mnt/82265825
+    path: /mnt/82225592

@@ -1,7 +1,7 @@
 configMapGenerator:
 - files:
   - application.yml
-  name: app-82265825-configmap
+  name: app-82225592-configmap
 resources:
 - ../../base
 - pvc.yaml
@@ -12,7 +12,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namePrefix: prod-
 images:
-- name: ceappacr.azurecr.io/app-82265825
+- name: ceappacr.azurecr.io/app-82225592
   newTag: "202411200033"
 - name: ceappacr.azurecr.io/troubleshooting
   newTag: latest
