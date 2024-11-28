@@ -44,7 +44,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build & Tag image
       run: |
-        docker build -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest .
+        docker build -t ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
         # docker tag ${{ secrets.BASEACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest ${{ secrets.CICDACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
     - name: Push image
       uses: azure/docker-login@v1
