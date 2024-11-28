@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-82225592
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-82225592
+  template:
+    metadata:
+      labels:
+        app: app-82225592
+    spec:
+      containers:
+      - name: app-82225592
+        # command: ["java", "-jar", "/app.jar"]
+        image: ceappacr.azurecr.io/app-82225592
+        ports:
+        - containerPort: 8080
+        args: ["--spring.config.location=file:/config/application.yml"]
+        volumeMounts:
+        - mountPath: /config
+          name: application-properties
+          readOnly: true
+
+      volumes:
+      - name: application-properties
+        configMap:
+          name: app-82225592-configmap
+          items:
+          - key: application-prod.yml
+            path: application.yml
+          defaultMode: 420
